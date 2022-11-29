@@ -1,0 +1,37 @@
+@import 'https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap';
+
+$font-family-sans-serif: "Fira Sans", sans-serif;
+
+
+// Base document colors
+$body-bg: #011C27;
+$body-color: white;
+$link-color: #62959C;
+$navbar-bg: #62959C;
+
+$light: #fff;
+
+// Navigation element colors
+// $footer-bg: #181818;
+// $navbar-bg: #303030;
+// $sidebar-bg: #303030;
+
+// Code blocks
+$code-block-bg-alpha: -.8;
+
+// Bootstrap popovers
+$popover-bg: #242424;
+
+// Bootstrap inputs
+$input-bg: #242424;
+
+
+/*-- scss:rules --*/
+
+.layout-example {
+  background: $gray-700;
+}
+
+/*-- scss:rules --*/
+.dark-mode { display: block; }
+.light-mode { display: none; }
