@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Titre de votre page d’introduction",
+    "section": "",
+    "text": "Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.\nJe vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.\n\n\n\n\n\n\nImportant\n\n\n\nN’oubliez pas d’inclure vos références sur chacune des pages!\n\n\nPar exemple:\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022).\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{nom2023,\n  author = {Prénom Nom},\n  title = {Titre de votre page d’introduction},\n  date = {2023-09-12},\n  url = {https://VOTREUSERNAME.github.io/FAS1002_projet-final//intro.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nPrénom Nom. 2023. “Titre de votre page d’introduction.”\nSeptember 12, 2023. https://VOTREUSERNAME.github.io/FAS1002_projet-final//intro.html."
+  },
+  {
+    "objectID": "a-propos.html#bio",
+    "href": "a-propos.html#bio",
+    "title": "À propos",
+    "section": "Bio",
+    "text": "Bio\nLe cours FAS1002 est une introduction à la programmation en sciences sociales avec R, un langage de programmation et un environnement statistique populaire pour analyser de données. Principalement convoité pour ses fonctionnalités statistiques avancées, R s’avère autant utilisé en recherche qu’en industrie, ce qui confère un avantage concret à son apprentissage. À ce sujet, R se prête bien à l’apprentissage de la programmation en raison de:\n\nsa nature libre et gratuite;\nsa polyvalence de fonctionnalités;\nsa popularité et sa variété de domaines d’application;\nla diversité de ressources et d’aide disponible gratuitement sur le Web;\nsa vibrante communauté reconnue pour son inclusivité et son support bienveillant."
+  },
+  {
+    "objectID": "a-propos.html#contact",
+    "href": "a-propos.html#contact",
+    "title": "À propos",
+    "section": "Contact",
+    "text": "Contact\nProgramme | Microprogramme en analyse des mégadonnées en sciences humaines et sociales\nUniversité | Université de Montréal\nCourriel | fas1002@samuelguay.ca"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "FAS1002_projet-final",
+    "section": "",
+    "text": "Vous pouvez faire le résumé de votre projet directement sur cette page et utiliser le document intro pour décrire votre projet.\nChaque page est en fait un fichier Quarto standard. 1"
+  },
+  {
+    "objectID": "index.html#vous-pourrez-inclure-des-graphiques",
+    "href": "index.html#vous-pourrez-inclure-des-graphiques",
+    "title": "FAS1002_projet-final",
+    "section": "Vous pourrez inclure des graphiques",
+    "text": "Vous pourrez inclure des graphiques\nComme la classique pyramide à la ci-dessous par exemple:\n\n\nCode\npar(mar = c(0, 1, 0, 1))\npie(\n  c(280, 60, 20),\n  c('Ciel', 'Côté ensoleillé de la pyramide', 'Côté ombragé de la pyramide'),\n  col = c('#0292D8', '#F7EA39', '#C4B632'),\n  init.angle = -50, border = NA\n)\n\n\n\n\n\nUne très belle tarte\n\n\n\n\n\nQuand même très cool, non? Vous pouvez mettre des annotations sur le côté!\n\n\nToujours très important de mettre les bons niveaux de titres\nUn peu de texte de remplissage pour faire comme si la page était plus longue. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "objectID": "index.html#remerciements",
+    "href": "index.html#remerciements",
+    "title": "FAS1002_projet-final",
+    "section": "Remerciements",
+    "text": "Remerciements\n\nJ’aimerais remercier toute la cohorte du cours FAS1002 de l’automne 2022 pour leur ouverture et efforts tout au long de la session!"
+  },
+  {
+    "objectID": "import.html",
+    "href": "import.html",
+    "title": "Titre de votre page d’importation",
+    "section": "",
+    "text": "Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.\nJe vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.\n\n\n\n\n\n\nImportant\n\n\n\nN’oubliez pas d’inclure vos références sur chacune des pages!\n\n\nPar exemple:\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022).\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{nom2023,\n  author = {Prénom Nom},\n  title = {Titre de votre page d’importation},\n  date = {2023-09-12},\n  url = {https://VOTREUSERNAME.github.io/FAS1002_projet-final//import.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nPrénom Nom. 2023. “Titre de votre page d’importation.”\nSeptember 12, 2023. https://VOTREUSERNAME.github.io/FAS1002_projet-final//import.html."
+  },
+  {
+    "objectID": "exploration.html",
+    "href": "exploration.html",
+    "title": "Titre de votre page d’importation",
+    "section": "",
+    "text": "Code\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%\n  addMarkers(lng=174.768, lat=-36.852, popup=\"Là où R est né\") %>%\n  addProviderTiles(providers$Esri.WorldGrayCanvas)"
+  },
+  {
+    "objectID": "exploration.html#peut-être-que-ça-vous-inspirera",
+    "href": "exploration.html#peut-être-que-ça-vous-inspirera",
+    "title": "Titre de votre page d’importation",
+    "section": "Peut-être que ça vous inspirera!",
+    "text": "Peut-être que ça vous inspirera!\n\n\nCode\nlibrary(plotly)\nlibrary(gapminder)\ndf <- gapminder\n\nfig <- df %>%\n  plot_ly(\n    x = ~ gdpPercap,\n    y = ~ lifeExp,\n    size = ~ pop,\n    color = ~ continent,\n    frame = ~ year,\n    text = ~ country,\n    hoverinfo = \"text\",\n    type = 'scatter',\n    mode = 'markers',\n    width = \"100%\",\n    height = 600\n  )\n\nfig <- fig %>% layout(xaxis = list(type = \"log\"))\n\nfig <- fig %>%\n  animation_button(\n    x = 0, xanchor = \"left\", y = -0.15, yanchor = \"bottom\"\n  )\nfig\n\n\n\n\n\n\n\nÀ votre imagination de jouer!"
+  }
+]
