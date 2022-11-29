@@ -51,14 +51,14 @@
   {
     "objectID": "exploration.html",
     "href": "exploration.html",
-    "title": "Titre de votre page d’importation",
+    "title": "Titre de votre page d’exploration",
     "section": "",
-    "text": "Code\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%\n  addMarkers(lng=174.768, lat=-36.852, popup=\"Là où R est né\") %>%\n  addProviderTiles(providers$Esri.WorldGrayCanvas)"
+    "text": "Code\nlibrary(leaflet)\nleaflet() %>%\n    setView(lng=150,\n            lat=-30,\n            zoom = 3) %>%\n    addTiles() %>%\n    addMarkers(lng=174.768,\n               lat=-36.852,\n               popup=\"Là où R est né\") %>%\n    addProviderTiles(providers$Esri.WorldGrayCanvas)"
   },
   {
     "objectID": "exploration.html#peut-être-que-ça-vous-inspirera",
     "href": "exploration.html#peut-être-que-ça-vous-inspirera",
-    "title": "Titre de votre page d’importation",
+    "title": "Titre de votre page d’exploration",
     "section": "Peut-être que ça vous inspirera!",
     "text": "Peut-être que ça vous inspirera!\n\n\nCode\nlibrary(plotly)\nlibrary(gapminder)\ndf <- gapminder\n\nfig <- df %>%\n  plot_ly(\n    x = ~ gdpPercap,\n    y = ~ lifeExp,\n    size = ~ pop,\n    color = ~ continent,\n    frame = ~ year,\n    text = ~ country,\n    hoverinfo = \"text\",\n    type = 'scatter',\n    mode = 'markers',\n    width = \"100%\",\n    height = 600\n  )\n\nfig <- fig %>% layout(xaxis = list(type = \"log\"))\n\nfig <- fig %>%\n  animation_button(\n    x = 0, xanchor = \"left\", y = -0.15, yanchor = \"bottom\"\n  )\nfig\n\n\n\n\n\n\n\nÀ votre imagination de jouer!"
   }
