@@ -1,0 +1,69 @@
+project:
+  type: website
+
+website:
+  title: "FAS1002_projet-final"
+  description: | 
+    "Page d'accueil du travail final pour le cours FAS1002 -
+    Initiation à la programmation en sciences sociales à
+    l'Université de Montréal donné lors du trimestre A2022."
+
+  reader-mode: true
+# URL de votre site une fois publié - <VOTREUSERNAME> à changer 
+  site-url: https://VOTREUSERNAME.github.io/FAS1002_projet-final/
+# URL de votre répertoire - VOTREUSERNAME/VOTRE-RÉPERTOIRE à changer
+  repo-url: https://github.com/VOTREUSERNAME/VOTRE-RÉPERTOIRE/
+  repo-actions: [edit, issue, source]
+  
+# Options à changer pour le menu ou la barre de navigation
+  navbar:
+    background: primary
+    logo: /assets/img/FAS1002.png 	# Logo image to be displayed left of the title.
+    logo-alt: Logo du cours FAS1002
+    # Alternate text for the logo image.
+    search: true
+    # menu
+    left:
+      - href: index.qmd
+        text: Page d'accueil
+      - intro.qmd
+      - href: import.qmd
+        text: Titre à changer
+      - a-propos.qmd
+    right:
+      - href: a-propos.qmd
+        text: Page à droite 
+
+# footer
+  page-footer:
+    left: |
+      [Propulsé par des logiciels libres 💖](https://github.com/FAS1002/A22){.nav-link}
+    center:
+    # Changer VOTRE NOM pour ce que vous voulez
+      - text: "VOTRE NOM"
+        href: mailto:VOTRECOURRIEL@example.com
+    right:
+      - icon: github
+        href: https://github.com/FAS1002/
+        aria-label: GitHub du cours FAS1002
+        
+
+# set favicon
+  favicon: /assets/img/FAS1002.png
+format:
+  html:
+    theme:
+      light: [flatly, assets/scss/styles.css]
+      dark: [darkly, assets/scss/styles-dark.scss]
+    code-fold: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    toc: true
+    lang: "fr"
+    smooth-scroll: true
+
+execute:
+  freeze: auto
+  
+editor: visual

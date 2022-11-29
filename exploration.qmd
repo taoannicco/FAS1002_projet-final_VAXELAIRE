@@ -1,0 +1,71 @@
+---
+title: "Titre de votre page d'importation"
+title-block-banner: true
+description: | 
+  Petite description de cette page.
+# à changer
+date: "2022-12-21"
+# Modifier les détails que vous voulez
+author:
+  - name: "Prénom Nom"
+    # Votre site web perso ou github
+    url: https://github.com/VOTREUSERNAME
+    # les champs d'affiliation sont optionnels, vous pouvez les
+    # comment out en ajoutant un # devant.
+    affiliation: FAS1002
+    affiliation-url: https://FAS1002.github.io/A22
+    # changer pour votre propre orcid id
+    # https://orcid.org/ pour vous inscrire.
+    orcid: 0000-0000-0000-0000
+
+# TRUE == Générer une citation pour cette page précise. Pour enlever, mettre false.
+citation: true
+# Inclure les références que vous utilisez dans vos rapports. Je conseille Zotero pour construire
+# ce fichier ou de connecter RStudio directement pour pouvoir citer avec @nom-de-reference.
+bibliography: references.bib
+---
+
+## Un peu d'interactivité pour le plaisir!
+
+```{r map}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng=174.768, lat=-36.852, popup="Là où R est né") %>%
+  addProviderTiles(providers$Esri.WorldGrayCanvas)
+```
+
+## Peut-être que ça vous inspirera!
+
+```{r plotly, message=FALSE, warning=FALSE}
+library(plotly)
+library(gapminder)
+df <- gapminder
+
+fig <- df %>%
+  plot_ly(
+    x = ~ gdpPercap,
+    y = ~ lifeExp,
+    size = ~ pop,
+    color = ~ continent,
+    frame = ~ year,
+    text = ~ country,
+    hoverinfo = "text",
+    type = 'scatter',
+    mode = 'markers',
+    width = "100%",
+    height = 600
+  )
+
+fig <- fig %>% layout(xaxis = list(type = "log"))
+
+fig <- fig %>%
+  animation_button(
+    x = 0, xanchor = "left", y = -0.15, yanchor = "bottom"
+  )
+fig
+```
+
+-------------------------------------------------------------------------------
+
+À votre imagination de jouer!

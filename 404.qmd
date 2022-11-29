@@ -1,0 +1,7 @@
+---
+title: Page non trouvée
+---
+
+La page que vous avez demandée est introuvable (elle a peut-être été déplacée ou renommée).
+
+Vous pouvez essayer de rechercher le nouvel emplacement de la page.
