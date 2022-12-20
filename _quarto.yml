@@ -2,7 +2,8 @@ project:
   type: website
 
 website:
-  title: "FAS1002_projet-final"
+  title: "Projet Final"
+  subtitle: "dans le cadre du cours FAS1002"
   description: | 
     "Page d'accueil du travail final pour le cours FAS1002 -
     Initiation à la programmation en sciences sociales à
