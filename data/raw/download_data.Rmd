@@ -1,0 +1,110 @@
+---
+title: "script"
+output: html_document
+---
+
+```{r - packages}
+library(googlesheets4)
+library(readxl)
+library(lubridate)
+library(magrittr)
+library(tidyverse)
+library(dplyr)
+```
+
+## Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.
+
+## Téléchargement données de Gapminder.
+
+on s'intéresse plus particulièrement à l'espérance de vie par pays à travers les années, la 4ème table du google sheet :
+
+google (mise à jour mensuelle)
+Il faut tout d'abord se connecter via google pour ce type de document.
+
+```{r identification à google}
+googlesheets4::gs4_find()
+```
+
+
+### création de la première date comme référence (à ne pas refaire)
+
+on crée un premier moi de référence et une première année de référence
+**Une fois fait, il ne faut JAMAIS répéter cette action.**
+```{r}
+date_ref <- Sys.Date()
+mois_ref <- month(date_ref)
+an_ref <- year(date_ref)
+jour_ref <- day(date_ref)
+```
+
+### création d'une variable donnant le mois :
+
+```{r}
+today <- Sys.Date()
+date <- today
+mois <- month(date)
+an <- year(date)
+```
+
+
+```{r}
+
+if (mois != mois_ref) {    #téléchargement pour tous les mois sauf celui de référénce
+    data_life <- read_sheet("https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676", sheet = 4)
+    mois_ref <- mois # le mois de rééférence devient le mois actuel
+    print("Les données sont à jour") 
+    } else if (an != an_ref) { #téléchargement pour les prochains mois de décembre
+    data_life <- read_sheet("https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676", sheet = 4)
+    print("Les données sont à jour") 
+    } else { 
+    print("Les données sont déjà à jour") 
+}
+
+    
+
+```
+
+## Téléchargement données de Our world in data (mise à jour quotidienne)
+
+
+
+### Energy 
+sur github en CSV
+
+```{r}
+jour <- day(today)
+
+if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de référénce
+    data_energy <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv")
+    jour_ref <- jour # le mois de rééférence devient le mois actuel
+    print("Les données sont à jour.") 
+    } else if (an != an_ref) { #téléchargement pour les prochains mois de décembre
+    data_energy <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv")
+    print("Les données sont à jour") 
+    } else { 
+    print("Les données sont déjà à jour") 
+}
+
+```
+
+### CO2 :
+
+sur github en CSV
+
+```{r}
+jour <- day(today)
+
+if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de référénce
+    data_carbone <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv")
+    jour_ref <- jour # le mois de rééférence devient le mois actuel
+    print("Les données sont à jour.") 
+    } else if (an != an_ref) { #téléchargement pour les prochains mois de décembre
+    data_carbone <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv")
+    print("Les données sont à jour") 
+    } else { 
+    print("Les données sont déjà à jour") 
+    }
+
+```
+
+
