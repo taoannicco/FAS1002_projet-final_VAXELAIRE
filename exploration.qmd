@@ -1,15 +1,15 @@
 ---
-title: "Titre de votre page d'exploration"
+title: "Visualisation des données"
 title-block-banner: false
 description: | 
-  Petite description de cette page.
+  Présentation des données via quelques visualistaions.
 # à changer
 date: "2022-12-21"
 # Modifier les détails que vous voulez
 author:
-  - name: "Prénom Nom"
+  - name: "Nicolas Vaxelaire"
     # Votre site web perso ou github
-    url: https://github.com/VOTREUSERNAME
+    url: https://github.com/taoannicco
     # les champs d'affiliation sont optionnels, vous pouvez les
     # comment out en ajoutant un # devant.
     affiliation: FAS1002
@@ -71,6 +71,6 @@ fig <- fig %>%
 fig
 ```
 
--------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 À votre imagination de jouer!

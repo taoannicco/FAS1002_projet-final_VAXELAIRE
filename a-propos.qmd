@@ -9,30 +9,21 @@ toc: false
 
 ## Bio
 
-Le [cours
-FAS1002](https://admission.umontreal.ca/cours-et-horaires/cours/fas-1002/) est
-une introduction à la programmation en sciences sociales avec
-[R](https://www.r-project.org/), un langage de programmation et un
-environnement statistique populaire pour analyser de données. Principalement
-convoité pour ses fonctionnalités statistiques avancées, R s'avère autant
-utilisé en recherche qu'en industrie, ce qui confère un avantage concret à son
-apprentissage. À ce sujet, R se prête bien à l'apprentissage de la
-programmation en raison de:
+Le [cours FAS1002](https://admission.umontreal.ca/cours-et-horaires/cours/fas-1002/) est une introduction à la programmation en sciences sociales avec [R](https://www.r-project.org/), un langage de programmation et un environnement statistique populaire pour analyser de données. Principalement convoité pour ses fonctionnalités statistiques avancées, R s'avère autant utilisé en recherche qu'en industrie, ce qui confère un avantage concret à son apprentissage. À ce sujet, R se prête bien à l'apprentissage de la programmation en raison de:
 
 -   sa nature libre et gratuite;
 -   sa polyvalence de fonctionnalités;
 -   sa popularité et sa variété de domaines d'application;
 -   la diversité de ressources et d'aide disponible gratuitement sur le Web;
--   sa vibrante communauté reconnue pour son inclusivité et son support
-    bienveillant.
+-   sa vibrante communauté reconnue pour son inclusivité et son support bienveillant.
 
-<aside></aside>
+<aside>
+
+</aside>
 
 ## Contact
 
-**Programme** \| [Microprogramme en analyse des mégadonnées en sciences
-humaines et
-sociales](https://admission.umontreal.ca/programmes/microprogramme-de-1er-cycle-en-analyse-des-megadonnees-en-sciences-humaines-et-sociales/structure-du-programme/)
+**Programme** \| [Microprogramme en analyse des mégadonnées en sciences humaines et sociales](https://admission.umontreal.ca/programmes/microprogramme-de-1er-cycle-en-analyse-des-megadonnees-en-sciences-humaines-et-sociales/structure-du-programme/)
 
 **Université** \| [Université de Montréal](https://umontreal.ca)
 
