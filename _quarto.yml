@@ -18,8 +18,8 @@ website:
 # Options à changer pour le menu ou la barre de navigation
   navbar:
     background: primary
-    logo: /assets/img/FAS1002.png 	# Logo image to be displayed left of the title.
-    logo-alt: Logo du cours FAS1002
+    logo: /assets/img/sun.png 	
+    logo-alt: Logo libre de droit - SOLEIL
     # Alternate text for the logo image.
     search: true
     # menu
@@ -27,19 +27,21 @@ website:
       - href: index.qmd
         text: Page d'accueil
       - intro.qmd
-      - href: import.qmd
-        text: Importation
+      - import.qmd
       - exploration.qmd
     right:
       - href: a-propos.qmd
-        text: Page à droite 
-
+        text: Détails
+      - href: exporter.qmd
+        text: Data
+      - href: manipulation.qmd
+        text: Construction des données
 # footer
   page-footer:
     left: |
-      [Propulsé par des logiciels libres 💖](https://github.com/FAS1002/A22){.nav-link}
+      [incluant logiciels libres](https://github.com/FAS1002/A22){.nav-link}
     center:
-    # Changer VOTRE NOM pour ce que vous voulez
+
       - text: "Vaxelaire Nicolas"
         href: mailto:vaxelairenico@gmail.com
     right:
@@ -49,12 +51,12 @@ website:
         
 
 # set favicon
-  favicon: /assets/img/FAS1002.png
+  favicon: /assets/img/sun.png
 format:
   html:
-    theme:
-      light: [flatly, assets/scss/styles.css]
-      dark: [darkly, assets/scss/styles-dark.scss]
+    theme: solar
+      #light: [flatly, assets/scss/styles.css]
+      #dark: [darkly, assets/scss/styles-dark.scss]
     code-fold: true
     code-copy: true
     code-overflow: wrap
@@ -62,6 +64,10 @@ format:
     toc: true
     lang: "fr"
     smooth-scroll: true
+    linkcolor: "#FAA219"
+    monofont: "#FAA219"
+    
+ 
 
 execute:
   freeze: auto
