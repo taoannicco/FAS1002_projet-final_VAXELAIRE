@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nicolas Vaxelaire">
-<meta name="description" content="Petite description de cette page.">
+<meta name="description" content="importation des 3 jeux de données.">
 
-<title>Projet Final - Comment importer ?</title>
+<title>Projet Final - Importer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -114,11 +177,11 @@ div.csl-indent {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./import.html" aria-current="page">
- <span class="menu-text">Comment importer ?</span></a>
+ <span class="menu-text">Importer</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./exploration.html">
- <span class="menu-text">Visualisation des données</span></a>
+ <span class="menu-text">Visualisations</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -127,11 +190,11 @@ div.csl-indent {
  <span class="menu-text">Détails</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exporter.qmd">
+    <a class="nav-link" href="./exporter.html">
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./manipulation.qmd">
+    <a class="nav-link" href="./manipulation.html">
  <span class="menu-text">Construction des données</span></a>
   </li>  
 </ul>
@@ -151,10 +214,10 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Comment importer ?</h1>
+      <h1 class="title">Importer</h1>
                   <div>
         <div class="description">
-          <p>Petite description de cette page.</p>
+          <p>importation des 3 jeux de données.</p>
         </div>
       </div>
                 </div>
@@ -165,7 +228,7 @@ div.csl-indent {
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
-      <a href="https://github.com/taoannicco">Nicolas Vaxelaire</a> <a href="https://orcid.org/0000-0000-0000-0000" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+      <a href="https://github.com/taoannicco">Nicolas Vaxelaire</a> 
     </div>
       <div class="quarto-title-meta-contents">
           <p class="affiliation">
@@ -194,7 +257,21 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser." id="toc-ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser." class="nav-link active" data-scroll-target="#ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser.">Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.</a>
+  <ul class="collapse">
+  <li><a href="#téléchargement-données-de-gapminder" id="toc-téléchargement-données-de-gapminder" class="nav-link" data-scroll-target="#téléchargement-données-de-gapminder">Téléchargement données de Gapminder :</a></li>
+  </ul></li>
+  <li><a href="#téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne" id="toc-téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne" class="nav-link" data-scroll-target="#téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne">Téléchargement données de Our world in data (mise à jour quotidienne)</a>
+  <ul class="collapse">
+  <li><a href="#energy" id="toc-energy" class="nav-link" data-scroll-target="#energy">Energy</a></li>
+  <li><a href="#co2" id="toc-co2" class="nav-link" data-scroll-target="#co2">CO2 :</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/edit/main/import.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/issues/new" class="toc-action">Faire part d'un problème</a></p><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/blob/main/import.qmd" class="toc-action">Voir la source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -202,8 +279,30 @@ div.csl-indent {
 
 
 
-<p>Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.</p>
-<p>Je vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets4)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser." class="level2">
+<h2 class="anchored" data-anchor-id="ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser.">Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.</h2>
+<section id="téléchargement-données-de-gapminder" class="level3">
+<h3 class="anchored" data-anchor-id="téléchargement-données-de-gapminder">Téléchargement données de Gapminder :</h3>
+<p>On s’intéresse plus particulièrement à <em>l’espérance de vie</em> par pays à travers les années, la 4ème table du google sheet :</p>
+<p>Il faut tout d’abord se connecter via google pour ce type de document. Voici le code R afin d’utiliser un google sheet :</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#googlesheets4::gs4_find()</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Les données de cette source seront actualisées mensuellement.</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -214,31 +313,124 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>N’oubliez pas d’inclure vos références sur chacune des pages!</p>
+<p>La première étape est cruciale pour l’actualisation des données mais ne doit pas être répétée.</p>
 </div>
 </div>
-<p>Par exemple:</p>
+<p>on crée un premier mois de référence et une première année de référence <strong>Une fois fait, il ne faut JAMAIS répéter cette action.</strong> Un message indiquera la statut de mise à jour des données.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># étape cruciale afin d'établir une référence pour l'actualisation date du LUNDI 21 DÉCEMBRE 2022</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mois_ref <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>an_ref <span class="ot">&lt;-</span> <span class="dv">2022</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>jour_ref <span class="ot">&lt;-</span> 21L</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># trouver la date du téléchargement</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> today</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>mois <span class="ot">&lt;-</span> <span class="fu">month</span>(date)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>an <span class="ot">&lt;-</span> <span class="fu">year</span>(date)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (mois <span class="sc">!=</span> mois_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    data_life <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676"</span>, <span class="at">sheet =</span> <span class="dv">4</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    mois_ref <span class="ot">&lt;-</span> mois <span class="co"># le mois de référence devient le mois actuel</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois des autres années si jamais mois de référence = mois actuel</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    data_life <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676"</span>, <span class="at">sheet =</span> <span class="dv">4</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Les données sont déjà à jour"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne" class="level2">
+<h2 class="anchored" data-anchor-id="téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne">Téléchargement données de Our world in data (mise à jour quotidienne)</h2>
+<section id="energy" class="level3">
+<h3 class="anchored" data-anchor-id="energy">Energy</h3>
+<p><strong>(sur github en format CSV)</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>jour <span class="ot">&lt;-</span> <span class="fu">day</span>(today)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (jour <span class="sc">!=</span> jour_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    jour_ref <span class="ot">&lt;-</span> jour <span class="co"># le mois de rééférence devient le mois actuel</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour."</span>) </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois de décembre</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Les données sont déjà à jour"</code></pre>
+</div>
+</div>
+</section>
+<section id="co2" class="level3">
+<h3 class="anchored" data-anchor-id="co2">CO2 :</h3>
+<p><strong>(sur github en format CSV)</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>jour <span class="ot">&lt;-</span> <span class="fu">day</span>(today)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (jour <span class="sc">!=</span> jour_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    jour_ref <span class="ot">&lt;-</span> jour <span class="co"># le mois de rééférence devient le mois actuel</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour."</span>) </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois de décembre</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Les données sont déjà à jour"</code></pre>
+</div>
+</div>
 <blockquote class="blockquote">
 <p>Les données proviennent entre autres de <span class="citation" data-cites="owidenergy">Ritchie, Roser, et Rosado (<a href="#ref-owidenergy" role="doc-biblioref">2022</a>)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>les packages proviennent de : Jennifer Bryan, Hadley Wickham, Garrett Grolemund, Stefan Milton Bache, Romain François, Lionel Henry,Kirill Müller</p>
 </blockquote>
 
 
 
+</section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Les références</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-owidenergy" class="csl-entry" role="doc-biblioentry">
 Ritchie, Hannah, Max Roser, et Pablo Rosado. 2022. <span>«&nbsp;Energy&nbsp;»</span>. <em>Our World in Data</em>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{vaxelaire2023,
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{vaxelaire,
   author = {Nicolas Vaxelaire},
-  title = {Comment importer\,?},
-  date = {2023-09-12},
+  title = {Importer},
+  date = {},
   url = {https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html},
   langid = {fr}
 }
-</code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-vaxelaire2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Nicolas Vaxelaire. 2023. <span>“Comment importer ?”</span> September 12,
-2023. <a href="https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html">https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html</a>.
+</code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Veuillez citer ce travail comme suit&nbsp;:</div><div id="ref-vaxelaire" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Nicolas Vaxelaire. n.d. <span>“Importer.”</span> <a href="https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html">https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

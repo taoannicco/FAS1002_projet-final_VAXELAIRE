@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projet Final - FAS1002_projet-final</title>
+<title>Projet Final - Nettoyage et Manipulation des données</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text">Page d’accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -173,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./manipulation.html">
+    <a class="nav-link active" href="./manipulation.html" aria-current="page">
  <span class="menu-text">Construction des données</span></a>
   </li>  
 </ul>
@@ -194,14 +194,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#nettoyage-de-la-banque-data_energy" id="toc-nettoyage-de-la-banque-data_energy" class="nav-link active" data-scroll-target="#nettoyage-de-la-banque-data_energy">Nettoyage de la banque data_energy :</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/edit/main/manipulation.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/issues/new" class="toc-action">Faire part d'un problème</a></p><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/blob/main/manipulation.qmd" class="toc-action">Voir la source</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">FAS1002_projet-final</h1>
+<h1 class="title">Nettoyage et Manipulation des données</h1>
 </div>
 
 
@@ -216,58 +222,190 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Cette étude présente les données de diverses sources dont celles de <a href="https://www.gapminder.org/data/documentation/gd004/">Gapminder</a> et de <a href="https://ourworldindata.org/">Our World in Data</a>. Cette étude adopte une perspective européenne.</p>
-<p>Il y a aussi un fort appuie sur les données de <a href="https://ec.europa.eu/eurostat/">Eurostat</a>.</p>
-<p>Premièrement on observe les prédictions de <a href="https://www.gapminder.org/data/documentation/gd004/">Gapminder</a> quant aux évolutions de l’espérance de vie des ciotyens européens qui serait en hausse jusqu’en 2100.</p>
-<p>Des écarts dans l’espérance de vie peuvent être perçus entre les pays de l’Union européenne.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgdal)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rmapshaper)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rworldmap)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearthdata)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridBase)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lessR)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>europe <span class="ot">&lt;-</span> <span class="fu">readOGR</span>(<span class="at">dsn =</span> <span class="st">"NUTS_RG_20M_2021_3035.shp"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">layer =</span> <span class="st">"NUTS_RG_20M_2021_3035"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("kableExtra")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("knitr")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>OGR data source with driver: ESRI Shapefile 
-Source: "/Users/nicolasvaxelaire/FAS1002_projet-final/NUTS_RG_20M_2021_3035.shp", layer: "NUTS_RG_20M_2021_3035"
-with 2010 features
-It has 9 fields</code></pre>
 </div>
+<p>Une fois les données importées, il est possible d’ajouter certaines modifications à celles-ci :</p>
+<p>☀︎ (I) Ajout d’uune variable <em>continent</em> pour les banques de <strong>Our World in Data</strong></p>
+<p>☀︎ (II) Choix de la table 4 du google sheet de <strong>Gapminder</strong></p>
+<p>☀︎ (III) autre manipulation</p>
+<p>☀︎ (IV)autre maniplation</p>
+<section id="nettoyage-de-la-banque-data_energy" class="level2">
+<h2 class="anchored" data-anchor-id="nettoyage-de-la-banque-data_energy">Nettoyage de la banque data_energy :</h2>
+<div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>european_table <span class="ot">&lt;-</span> <span class="fu">tidy</span>(<span class="at">x =</span> europe, <span class="at">region =</span> <span class="st">"CNTR_CODE"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(european_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"long"</span>,<span class="st">"lat"</span>,<span class="st">"order"</span>,<span class="st">"hole"</span>,<span class="st">"piece"</span>,<span class="st">"group"</span>,<span class="st">"pays"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>europe_carte <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> european_table, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> <span class="st">"#FAA219"</span>))<span class="sc">+</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span> <span class="st">"#FAA219"</span>)<span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">1000000</span>, <span class="dv">5500000</span>)<span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">2000000</span>,<span class="dv">7500000</span>)<span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()<span class="sc">+</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#012b36"</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>europe_carte</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages('gapminder')</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Après avoir téléchargé les données actualisées, il vient de préparer les données pour leur utilisation :</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gap_tsv <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"gapminder.tsv"</span>, <span class="at">package =</span> <span class="st">"gapminder"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>table_continent <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(gap_tsv)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(table_continent)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>table_continent <span class="ot">&lt;-</span> table_continent[,<span class="fu">c</span>( <span class="st">"country"</span>, <span class="st">"continent"</span>)]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data_energie <span class="ot">&lt;-</span> <span class="fu">left_join</span>(table_continent, data_energy, <span class="at">by =</span> <span class="st">"country"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data_carbone <span class="ot">&lt;-</span> <span class="fu">left_join</span>(table_continent, data_carbon, <span class="at">by =</span> <span class="st">"country"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>data_energie_int <span class="ot">&lt;-</span> data_energie[,<span class="fu">c</span>( <span class="st">"population"</span>, <span class="st">"gdp"</span>,<span class="st">"electricity_demand"</span>,<span class="st">"energy_per_gdp"</span>)]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data_carbone_int <span class="ot">&lt;-</span> data_carbone[,<span class="fu">c</span>( <span class="st">"population"</span>,<span class="st">"co2_growth_prct"</span>)]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"les données sont prêtes à l'étude"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "les données sont prêtes à l'étude"</code></pre>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(data_energie_int))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;">   population </th>
+   <th style="text-align:left;">      gdp </th>
+   <th style="text-align:left;"> electricity_demand </th>
+   <th style="text-align:left;"> energy_per_gdp </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Min.   :7.629e+04 </td>
+   <td style="text-align:left;"> Min.   :2.105e+08 </td>
+   <td style="text-align:left;"> Min.   :   0.00 </td>
+   <td style="text-align:left;"> Min.   : 0.08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1st Qu.:3.364e+06 </td>
+   <td style="text-align:left;"> 1st Qu.:1.439e+10 </td>
+   <td style="text-align:left;"> 1st Qu.:   3.81 </td>
+   <td style="text-align:left;"> 1st Qu.: 0.79 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Median :8.037e+06 </td>
+   <td style="text-align:left;"> Median :4.570e+10 </td>
+   <td style="text-align:left;"> Median :  17.47 </td>
+   <td style="text-align:left;"> Median : 1.22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Mean   :3.453e+07 </td>
+   <td style="text-align:left;"> Mean   :3.176e+11 </td>
+   <td style="text-align:left;"> Mean   : 141.13 </td>
+   <td style="text-align:left;"> Mean   : 1.64 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3rd Qu.:2.284e+07 </td>
+   <td style="text-align:left;"> 3rd Qu.:1.885e+11 </td>
+   <td style="text-align:left;"> 3rd Qu.:  83.87 </td>
+   <td style="text-align:left;"> 3rd Qu.: 2.04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Max.   :1.426e+09 </td>
+   <td style="text-align:left;"> Max.   :1.815e+13 </td>
+   <td style="text-align:left;"> Max.   :8466.32 </td>
+   <td style="text-align:left;"> Max.   :25.25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> NA's   :120 </td>
+   <td style="text-align:left;"> NA's   :31740 </td>
+   <td style="text-align:left;"> NA's   :105300 </td>
+   <td style="text-align:left;"> NA's   :73920 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<aside>
-pays européens
-</aside>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(data_carbone_int))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;">   population </th>
+   <th style="text-align:left;"> co2_growth_prct </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Min.   :4.882e+03 </td>
+   <td style="text-align:left;"> Min.   :  -100.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 1st Qu.:1.240e+06 </td>
+   <td style="text-align:left;"> 1st Qu.:    -1.19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Median :3.742e+06 </td>
+   <td style="text-align:left;"> Median :     3.80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Mean   :2.097e+07 </td>
+   <td style="text-align:left;"> Mean   :    23.80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> 3rd Qu.:1.118e+07 </td>
+   <td style="text-align:left;"> 3rd Qu.:    11.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Max.   :1.426e+09 </td>
+   <td style="text-align:left;"> Max.   :102318.51 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> NA's   :8484 </td>
+   <td style="text-align:left;"> NA's   :122388 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
