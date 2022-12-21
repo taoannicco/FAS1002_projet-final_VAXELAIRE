@@ -1,5 +1,5 @@
 ---
-title: "Titre de votre page d'importation"
+title: "Comment importer ?"
 title-block-banner: true
 description: | 
   Petite description de cette page.
