@@ -9,10 +9,10 @@ website:
     l'Université de Montréal donné lors du trimestre A2022."
 
   reader-mode: true
-# URL de votre site une fois publié - <VOTREUSERNAME> à changer 
-  site-url: https://VOTREUSERNAME.github.io/FAS1002_projet-final/
-# URL de votre répertoire - VOTREUSERNAME/VOTRE-RÉPERTOIRE à changer
-  repo-url: https://github.com/VOTREUSERNAME/VOTRE-RÉPERTOIRE/
+
+  site-url: https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE/
+
+  repo-url: https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE
   repo-actions: [edit, issue, source]
   
 # Options à changer pour le menu ou la barre de navigation
@@ -40,8 +40,8 @@ website:
       [Propulsé par des logiciels libres 💖](https://github.com/FAS1002/A22){.nav-link}
     center:
     # Changer VOTRE NOM pour ce que vous voulez
-      - text: "VOTRE NOM"
-        href: mailto:VOTRECOURRIEL@example.com
+      - text: "Vaxelaire Nicolas"
+        href: mailto:vaxelairenico@gmail.com
     right:
       - icon: github
         href: https://github.com/FAS1002/

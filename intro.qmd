@@ -1,15 +1,15 @@
 ---
-title: "Titre de votre page d'introduction"
+title: "Page d'introduction"
 title-block-banner: true
 description: | 
-  Petite description de votre projet en une ligne.
+  Projet de fin de session.
 # à changer
 date: "2022-12-21"
 # Modifier les détails que vous voulez
 author:
-  - name: "Prénom Nom"
+  - name: "Nicolas Vaxelaire"
     # Votre site web perso ou github
-    url: https://github.com/VOTREUSERNAME
+    url: https://github.com/taoannicco
     # les champs d'affiliation sont optionnels, vous pouvez les
     # comment out en ajoutant un # devant.
     affiliation: FAS1002
