@@ -113,3 +113,68 @@ if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de r�
     }
 
 ```
+
+
+
+@Manual{
+    title  {googlesheets4: Access Google Sheets using the Sheets API V4},
+    author = {Jennifer Bryan},
+    year = {2022},
+    note = {R package version 1.0.1},
+    url = {https://CRAN.R-project.org/package=googlesheets4},
+}
+
+@Manual{,
+    title = {readxl: Read Excel Files},
+    author = {Hadley Wickham and Jennifer Bryan},
+    year = {2022},
+    note = {R package version 1.4.1},
+    url = {https://CRAN.R-project.org/package=readxl},
+}
+  
+@Article{,
+    title = {Dates and Times Made Easy with {lubridate}},
+    author = {Garrett Grolemund and Hadley Wickham},
+    journal = {Journal of Statistical Software},
+    year = {2011},
+    volume = {40},
+    number = {3},
+    pages = {1--25},
+    url = {https://www.jstatsoft.org/v40/i03/},
+}
+
+@Manual{,
+    title = {magrittr: A Forward-Pipe Operator for R},
+    author = {Stefan Milton Bache and Hadley Wickham},
+    year = {2022},
+    note = {R package version 2.0.3},
+    url = {https://CRAN.R-project.org/package=magrittr},
+}
+
+@Manual{,
+    title = {dplyr: A Grammar of Data Manipulation},
+    author = {Hadley Wickham and Romain François and Lionel Henry and Kirill Müller},
+    year = {2022},
+    note = {R package version 1.0.10},
+    url = {https://CRAN.R-project.org/package=dplyr},
+}
+
+@Manual{,
+    title = {gapminder: Data from Gapminder},
+    author = {Jennifer Bryan},
+    year = {2017},
+    note = {R package version 0.3.0},
+    url = {https://CRAN.R-project.org/package=gapminder},
+}
+
+@Article{,
+    title = {Welcome to the {tidyverse}},
+    author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+    year = {2019},
+    journal = {Journal of Open Source Software},
+    volume = {4},
+    number = {43},
+    pages = {1686},
+    doi = {10.21105/joss.01686},
+}
+
