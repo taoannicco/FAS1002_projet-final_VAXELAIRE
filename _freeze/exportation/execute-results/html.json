@@ -1,0 +1,14 @@
+{
+  "hash": "372b097b72036c463324f16e38f7e9ed",
+  "result": {
+    "markdown": "---\ntitle: \"Datum\"\ntitle-block-banner: true\ndescription: | \n  retrouvez les données ici\n\ndate: \"2022-12-21\"\n\nauthor:\n  - name: \"Nicolas Vaxelaire\"\n    url: https://github.com/taoannicco\n    affiliation: FAS1002\n    affiliation-url: https://FAS1002.github.io/A22\n\ncitation: true\n# Inclure les références que vous utilisez dans vos rapports. Je conseille Zotero pour construire\n# ce fichier ou de connecter RStudio directement pour pouvoir citer avec @nom-de-reference.\nbibliography: references.bib\n---\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

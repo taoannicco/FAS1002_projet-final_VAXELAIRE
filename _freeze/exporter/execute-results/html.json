@@ -1,0 +1,14 @@
+{
+  "hash": "bc1c1370fc1f7613ca6aae28649cdf9e",
+  "result": {
+    "markdown": "---\ntitle: \"Données\"\ncolortheme: \"#FAA219\"\ntitle-block-banner: false\ndescription: | \n  Liens popur télécharger les données.\n# à changer\ndate: \"2022-12-21\"\n# Modifier les détails que vous voulez\nauthor:\n  - name: \"Nicolas Vaxelaire\"\n    # Votre site web perso ou github\n    url: https://github.com/taoannicco\n    # les champs d'affiliation sont optionnels, vous pouvez les\n    # comment out en ajoutant un # devant.\n    affiliation: FAS1002\n    affiliation-url: https://FAS1002.github.io/A22\n    # changer pour votre propre orcid id\n    # https://orcid.org/ pour vous inscrire.\n    orcid: 0000-0000-0000-0000\n\n# TRUE == Générer une citation pour cette page précise. Pour enlever, mettre false.\ncitation: true\n# Inclure les références que vous utilisez dans vos rapports. Je conseille Zotero pour construire\n# ce fichier ou de connecter RStudio directement pour pouvoir citer avec @nom-de-reference.\nbibliography: references.bib\n---\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
