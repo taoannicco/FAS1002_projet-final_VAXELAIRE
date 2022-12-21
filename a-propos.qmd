@@ -5,17 +5,17 @@ toc: false
 
 <!--# Veuillez adapter le texte ci-dessous en lien avec votre projet -->
 
-![](assets/img/FAS1002.png){fig-align="center" width="25%"}
+![](assets/img/sun.png){fig-align="center" width="25%"}
 
-## Bio
+## Données
 
-Le [cours FAS1002](https://admission.umontreal.ca/cours-et-horaires/cours/fas-1002/) est une introduction à la programmation en sciences sociales avec [R](https://www.r-project.org/), un langage de programmation et un environnement statistique populaire pour analyser de données. Principalement convoité pour ses fonctionnalités statistiques avancées, R s'avère autant utilisé en recherche qu'en industrie, ce qui confère un avantage concret à son apprentissage. À ce sujet, R se prête bien à l'apprentissage de la programmation en raison de:
+Voici les lien pour télécharger les différentes données :["https://github.com/owid/co2-data"](https://github.com/owid/co2-data)
 
--   sa nature libre et gratuite;
--   sa polyvalence de fonctionnalités;
--   sa popularité et sa variété de domaines d'application;
--   la diversité de ressources et d'aide disponible gratuitement sur le Web;
--   sa vibrante communauté reconnue pour son inclusivité et son support bienveillant.
+["https://github.com/owid/energy-data/"](https://github.com/owid/energy-data/)
+
+["http://gapm.io/ilex"](http://gapm.io/ilex)
+
+Cette étude est faite dans le cadre du [cours FAS1002](https://admission.umontreal.ca/cours-et-horaires/cours/fas-1002/) est une introduction à la programmation en sciences sociales avec [R](https://www.r-project.org/), un langage de programmation et un environnement statistique populaire pour analyser de données. Principalement convoité pour ses fonctionnalités statistiques avancées, R s'avère autant utilisé en recherche qu'en industrie, ce qui confère un avantage concret à son apprentissage.
 
 <aside>
 
