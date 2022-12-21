@@ -2,30 +2,30 @@
   {
     "objectID": "exploration.html",
     "href": "exploration.html",
-    "title": "Titre de votre page d’exploration",
+    "title": "Visualisation des données",
     "section": "",
     "text": "Code\nlibrary(leaflet)\nleaflet() %>%\n    setView(lng=150,\n            lat=-30,\n            zoom = 3) %>%\n    addTiles() %>%\n    addMarkers(lng=174.768,\n               lat=-36.852,\n               popup=\"Là où R est né\") %>%\n    addProviderTiles(providers$Esri.WorldGrayCanvas)"
   },
   {
-    "objectID": "exploration.html#peut-être-que-ça-vous-inspirera",
-    "href": "exploration.html#peut-être-que-ça-vous-inspirera",
-    "title": "Titre de votre page d’exploration",
-    "section": "Peut-être que ça vous inspirera!",
-    "text": "Peut-être que ça vous inspirera!\n\n\nCode\nlibrary(plotly)\nlibrary(gapminder)\ndf <- gapminder\n\nfig <- df %>%\n  plot_ly(\n    x = ~ gdpPercap,\n    y = ~ lifeExp,\n    size = ~ pop,\n    color = ~ continent,\n    frame = ~ year,\n    text = ~ country,\n    hoverinfo = \"text\",\n    type = 'scatter',\n    mode = 'markers',\n    width = \"100%\",\n    height = 600\n  )\n\nfig <- fig %>% layout(xaxis = list(type = \"log\"))\n\nfig <- fig %>%\n  animation_button(\n    x = 0, xanchor = \"left\", y = -0.15, yanchor = \"bottom\"\n  )\nfig\n\n\n\n\n\n\n\nÀ votre imagination de jouer!"
+    "objectID": "exploration.html#graphique-1",
+    "href": "exploration.html#graphique-1",
+    "title": "Visualisation des données",
+    "section": "Graphique 1",
+    "text": "Graphique 1\n\n\nCode\nlibrary(plotly)\nlibrary(gapminder)\ndf <- gapminder\n\nfig <- df %>%\n  plot_ly(\n    x = ~ gdpPercap,\n    y = ~ lifeExp,\n    size = ~ pop,\n    color = ~ continent,\n    frame = ~ year,\n    text = ~ country,\n    hoverinfo = \"text\",\n    type = 'scatter',\n    mode = 'markers',\n    width = \"100%\",\n    height = 600\n  )\n\nfig <- fig %>% layout(xaxis = list(type = \"log\"))\n\nfig <- fig %>%\n  animation_button(\n    x = 0, xanchor = \"left\", y = -0.15, yanchor = \"bottom\"\n  )\nfig"
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "Titre de votre page d’introduction",
+    "title": "Introduction",
     "section": "",
-    "text": "Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.\nJe vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.\n\n\n\n\n\n\nImportant\n\n\n\nN’oubliez pas d’inclure vos références sur chacune des pages!\n\n\nPar exemple:\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022).\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{nom2023,\n  author = {Prénom Nom},\n  title = {Titre de votre page d’introduction},\n  date = {2023-09-12},\n  url = {https://VOTREUSERNAME.github.io/FAS1002_projet-final//intro.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nPrénom Nom. 2023. “Titre de votre page d’introduction.”\nSeptember 12, 2023. https://VOTREUSERNAME.github.io/FAS1002_projet-final//intro.html."
+    "text": "Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.\nJe vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.\n\n\n\n\n\n\nImportant\n\n\n\nN’oubliez pas d’inclure vos références sur chacune des pages!\n\n\nPar exemple:\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022).\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{vaxelaire2023,\n  author = {Nicolas Vaxelaire},\n  title = {Introduction},\n  date = {2023-09-12},\n  url = {https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//intro.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nNicolas Vaxelaire. 2023. “Introduction.” September 12,\n2023. https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//intro.html."
   },
   {
     "objectID": "import.html",
     "href": "import.html",
-    "title": "Titre de votre page d’importation",
+    "title": "Comment importer ?",
     "section": "",
-    "text": "Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.\nJe vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.\n\n\n\n\n\n\nImportant\n\n\n\nN’oubliez pas d’inclure vos références sur chacune des pages!\n\n\nPar exemple:\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022).\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{nom2023,\n  author = {Prénom Nom},\n  title = {Titre de votre page d’importation},\n  date = {2023-09-12},\n  url = {https://VOTREUSERNAME.github.io/FAS1002_projet-final//import.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nPrénom Nom. 2023. “Titre de votre page d’importation.”\nSeptember 12, 2023. https://VOTREUSERNAME.github.io/FAS1002_projet-final//import.html."
+    "text": "Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l’importation et la manipulation des données.\nJe vous conseille d’écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d’éviter de réécrire cette page plusieurs fois.\n\n\n\n\n\n\nImportant\n\n\n\nN’oubliez pas d’inclure vos références sur chacune des pages!\n\n\nPar exemple:\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022).\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{vaxelaire2023,\n  author = {Nicolas Vaxelaire},\n  title = {Comment importer\\,?},\n  date = {2023-09-12},\n  url = {https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nNicolas Vaxelaire. 2023. “Comment importer ?” September 12,\n2023. https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//import.html."
   },
   {
     "objectID": "index.html",
