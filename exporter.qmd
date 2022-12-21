@@ -1,0 +1,27 @@
+---
+title: "Données"
+colortheme: "#FAA219"
+title-block-banner: false
+description: | 
+  Liens popur télécharger les données.
+# à changer
+date: "`r Sys.Date()`"
+# Modifier les détails que vous voulez
+author:
+  - name: "Nicolas Vaxelaire"
+    # Votre site web perso ou github
+    url: https://github.com/taoannicco
+    # les champs d'affiliation sont optionnels, vous pouvez les
+    # comment out en ajoutant un # devant.
+    affiliation: FAS1002
+    affiliation-url: https://FAS1002.github.io/A22
+    # changer pour votre propre orcid id
+    # https://orcid.org/ pour vous inscrire.
+    orcid: 0000-0000-0000-0000
+
+# TRUE == Générer une citation pour cette page précise. Pour enlever, mettre false.
+citation: true
+# Inclure les références que vous utilisez dans vos rapports. Je conseille Zotero pour construire
+# ce fichier ou de connecter RStudio directement pour pouvoir citer avec @nom-de-reference.
+bibliography: references.bib
+---

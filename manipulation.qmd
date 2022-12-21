@@ -1,0 +1,65 @@
+---
+title: "Nettoyage et Manipulation des données"
+output:
+  pdf_document:
+    df_print: kable
+---
+
+
+```{r, message=FALSE, warning=FALSE}
+#install.packages("kableExtra")
+#install.packages("knitr")
+library(knitr)
+library(kableExtra)
+```
+
+Une fois les données importées, il est possible d'ajouter certaines modifications à celles-ci : 
+
+☀︎   \(I\) Ajout d'uune variable *continent* pour les banques de **Our World in Data**
+
+☀︎   \(II\) Choix de la table 4 du google sheet de **Gapminder**
+
+☀︎   \(III\) autre manipulation
+
+☀︎   \(IV\)autre maniplation
+
+
+## Nettoyage de la banque data_energy :
+```{r, message=FALSE, warning=FALSE}
+#install.packages('gapminder')
+library(gapminder)
+library(dplyr)
+data_energy <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv")
+```
+Après avoir téléchargé les données actualisées, il vient de préparer les données pour leur utilisation : 
+
+```{r,message=FALSE, warning=FALSE,results=FALSE}
+gap_tsv <- system.file("extdata", "gapminder.tsv", package = "gapminder")
+table_continent <- read.delim(gap_tsv)
+str(table_continent)
+table_continent <- table_continent[,c( "country", "continent")]
+data_energie <- left_join(table_continent, data_energy, by = "country")
+
+data_carbon <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv")
+data_carbone <- left_join(table_continent, data_carbon, by = "country")
+
+
+data_energie_int <- data_energie[,c( "population", "gdp","electricity_demand","energy_per_gdp")]
+
+data_carbone_int <- data_carbone[,c( "population","co2_growth_prct")]
+```
+
+```{r}
+print("les données sont prêtes à l'étude")
+```
+
+
+```{r}
+kable(summary(data_energie_int))
+```
+
+```{r}
+kable(summary(data_carbone_int))
+```
+
+
