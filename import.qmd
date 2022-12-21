@@ -1,38 +1,125 @@
 ---
-title: "Comment importer ?"
+title: "Importer"
 title-block-banner: true
 description: | 
-  Petite description de cette page.
-# à changer
-date: "2022-12-21"
-# Modifier les détails que vous voulez
+  importation des 3 jeux de données.
+
+date: "`r Sys.Date()`"
+
 author:
   - name: "Nicolas Vaxelaire"
-    # Votre site web perso ou github
     url: https://github.com/taoannicco
-    # les champs d'affiliation sont optionnels, vous pouvez les
-    # comment out en ajoutant un # devant.
     affiliation: FAS1002
     affiliation-url: https://FAS1002.github.io/A22
-    # changer pour votre propre orcid id
-    # https://orcid.org/ pour vous inscrire.
-    orcid: 0000-0000-0000-0000
 
-# TRUE == Générer une citation pour cette page précise. Pour enlever, mettre false.
 citation: true
 # Inclure les références que vous utilisez dans vos rapports. Je conseille Zotero pour construire
 # ce fichier ou de connecter RStudio directement pour pouvoir citer avec @nom-de-reference.
 bibliography: references.bib
 ---
 
-Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l'importation et la manipulation des données.
+```{r,  message=FALSE, warning=FALSE}
+library(googlesheets4)
+library(readxl)
+library(lubridate)
+library(magrittr)
+library(tidyverse)
+library(dplyr)
+```
 
-Je vous conseille d'écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d'éviter de réécrire cette page plusieurs fois.
+
+## Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.
+
+### Téléchargement données de Gapminder :
+
+On s'intéresse plus particulièrement à *l'espérance de vie* par pays à travers les années, la 4ème table du google sheet :
+
+Il faut tout d'abord se connecter via google pour ce type de document. Voici le code R afin d'utiliser un google sheet : 
+
+```{r identification à google}
+#googlesheets4::gs4_find()
+```
+
+Les données de cette source seront actualisées mensuellement.
 
 ::: callout-important
-N'oubliez pas d'inclure vos références sur chacune des pages!
+La première étape est cruciale pour l'actualisation des données mais ne doit pas être répétée.
 :::
 
-Par exemple:
+on crée un premier mois de référence et une première année de référence **Une fois fait, il ne faut JAMAIS répéter cette action.** Un message indiquera la statut de mise à jour des données. 
+```{r, message=FALSE, warning=FALSE}
+# étape cruciale afin d'établir une référence pour l'actualisation date du LUNDI 21 DÉCEMBRE 2022
+mois_ref <- 12
+an_ref <- 2022
+jour_ref <- 21L
+```
+
+```{r,message=FALSE, warning=FALSE}
+# trouver la date du téléchargement
+today <- Sys.Date()
+date <- today
+mois <- month(date)
+an <- year(date)
+```
+
+```{r,warning=FALSE}
+if (mois != mois_ref) {    #téléchargement pour tous les mois sauf celui de référénce
+    data_life <- read_sheet("https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676", sheet = 4)
+    
+    mois_ref <- mois # le mois de référence devient le mois actuel
+    print("Les données sont à jour") 
+    } else if (an != an_ref) { #téléchargement pour les prochains mois des autres années si jamais mois de référence = mois actuel
+    data_life <- read_sheet("https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676", sheet = 4)
+    print("Les données sont à jour") 
+    } else { 
+    print("Les données sont déjà à jour") 
+}
+```
+
+## Téléchargement données de Our world in data (mise à jour quotidienne)
+
+### Energy
+
+**(sur github en format CSV)**
+```{r,warning=FALSE}
+jour <- day(today)
+
+if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de référénce
+    data_energy <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv")
+    jour_ref <- jour # le mois de rééférence devient le mois actuel
+    print("Les données sont à jour.") 
+    } else if (an != an_ref) { #téléchargement pour les prochains mois de décembre
+    data_energy <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv")
+    print("Les données sont à jour") 
+    } else { 
+    print("Les données sont déjà à jour") 
+    }
+
+```
+
+### CO2 :
+
+**(sur github en format CSV)**
+```{r,warning=FALSE}
+jour <- day(today)
+
+if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de référénce
+    data_carbon <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv")
+    jour_ref <- jour # le mois de rééférence devient le mois actuel
+    print("Les données sont à jour.") 
+    } else if (an != an_ref) { #téléchargement pour les prochains mois de décembre
+    data_carbon <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv")
+    print("Les données sont à jour") 
+    } else { 
+    print("Les données sont déjà à jour") 
+    }
+
+```
+
+
 
 > Les données proviennent entre autres de @owidenergy.
+
+> les packages proviennent de : Jennifer Bryan, Hadley Wickham, Garrett Grolemund, Stefan Milton Bache, Romain François, Lionel Henry,Kirill Müller 
+
+

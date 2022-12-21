@@ -1,10 +1,11 @@
 ---
-title: "Visualisation des données"
+title: "Visualisations"
+colortheme: "#FAA219"
 title-block-banner: false
 description: | 
   Présentation des données via quelques visualistaions.
 # à changer
-date: "2022-12-21"
+date: "`r Sys.Date()`"
 # Modifier les détails que vous voulez
 author:
   - name: "Nicolas Vaxelaire"
@@ -25,53 +26,120 @@ citation: true
 bibliography: references.bib
 ---
 
-## Carte active
-
-```{r map}
-library(leaflet)
-leaflet() %>%
-    setView(lng=150,
-            lat=-30,
-            zoom = 3) %>%
-    addTiles() %>%
-    addMarkers(lng=174.768,
-               lat=-36.852,
-               popup="Là où R est né") %>%
-    addProviderTiles(providers$Esri.WorldGrayCanvas)
+```{r map, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(googlesheets4)
+library(readxl)
+library(lubridate)
+library(magrittr)
+library(tidyverse)
+library(dplyr)
+library(tidyverse)
+library(rgdal)
+library(rmapshaper)
+library(sp)
+library(sf)
+library(broom)
+library(maps)
+library(rworldmap)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(gridBase)
+library(lessR)
+library(ggrepel)
 ```
 
-## Graphique 1
+## Graphique 1 :
 
-```{r plotly, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 
-library(plotly)
-library(gapminder)
-df <- gapminder
+data_life <- read_sheet("https://docs.google.com/spreadsheets/d/1RheSon1-q4vFc3AGyupVPH6ptEByE-VtnjOCselU0PE/edit#gid=176703676", sheet = 4)
+colnames(data_life) <- c("country_code","country","annee","esperance_de_vie")
 
-fig <- df %>%
-  plot_ly(
-    x = ~ gdpPercap,
-    y = ~ lifeExp,
-    size = ~ pop,
-    color = ~ continent,
-    frame = ~ year,
-    text = ~ country,
-    hoverinfo = "text",
-    type = 'scatter',
-    mode = 'markers',
-    width = "100%",
-    height = 600
-  )
+gap_tsv <- system.file("extdata", "gapminder.tsv", package = "gapminder")
+table_continent <- read.delim(gap_tsv)
+str(table_continent)
+table_continent <- table_continent[,c( "country", "continent")]
 
-fig <- fig %>% layout(xaxis = list(type = "log"))
+data_life <- left_join(table_continent, data_life, by = "country")
+europe_data <- data_life |>
+    filter(continent == "Europe")
+europe_data <- europe_data |> 
+    filter(annee >= 2022)
 
-fig <- fig %>%
-  animation_button(
-    x = 0, xanchor = "left", y = -0.15, yanchor = "bottom"
-  )
-fig
+
+europe_data <- europe_data |> 
+    distinct(esperance_de_vie, country, annee, country_code)
+graphique1 <- ggplot(data = europe_data, mapping = aes(x = annee, y = esperance_de_vie, color = country, group = country))+geom_jitter(size = .4)
+graphique1 +
+    labs(
+        x = "",
+    y = "Espérance de vie ",
+    title = "Prédictions des espérances de vie en Europe"
+  ) +
+  theme_classic()+
+  theme(legend.position = "bottom")+
+  theme(plot.background=element_rect(fill = "#012b36"),
+        legend.background = element_rect(fill = "#012b36", color = NA),
+         panel.background = element_rect(fill = "#012b36"),
+  plot.title = element_text(hjust = 0.5, color = "#ACB6BD"))+
+  theme(axis.text = element_text(colour = "#ACB6BD"))+
+  theme(plot.background=element_rect(fill = "#012b36"))+
+    theme(axis.line = element_line(colour = "#ACB6BD"))+
+    theme(axis.text.x = element_text(colour = "#ACB6BD"))+
+    theme(axis.title.y  = element_text(colour = "#ACB6BD"))
+
 ```
+
+Il y aura une hausse des espérances de vie européenne selon les prédictions selon l'organisme Gapminder. Ce graphique aide à visualiser cette tendance sans pour autant tenter d'entrer dans les détails. 
+
+
+## Carte
+
+```{r, message=FALSE, warning=FALSE }
+europe <- readOGR(dsn = "NUTS_RG_20M_2021_3035.shp",
+                  layer = "NUTS_RG_20M_2021_3035")
+european_table <- tidy(x = europe, region = "CNTR_CODE")
+colnames(european_table) <- c("long","lat","order","hole","piece","group","pays")
+
+europe_carte <- ggplot(data = european_table, aes(x = long, y = lat, group = group))+ 
+  geom_polygon()+
+  ylim(1000000, 5500000)+
+  xlim(2000000,7500000)+
+  theme_void()
+europe_data <- data_life |>
+    filter(continent == "Europe")
+europe_data <- europe_data |> 
+    filter(annee == 2022)
+
+
+europe_data <- europe_data |> 
+    distinct(esperance_de_vie, country, annee, country_code)
+
+esperance_2022 <- europe_data
+colnames(esperance_2022) <- c("country_name","country_code","Annee","esperance_de_vie")
+
+country_totals <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-04/country_totals.csv')
+table_pays <- country_totals[,c( "country", "country_name")]
+colnames(table_pays) <- c("country_code","country_name")
+colnames(european_table) <- c("long","lat","order","hole","piece","group","country_code")
+
+
+
+europe <- left_join(european_table,table_pays, by = "country_code")
+europe <- left_join(europe, esperance_2022, by ="country_name")
+
+europe_carte <- ggplot(data = europe, aes(x = long, y = lat, group = group))+ 
+  geom_polygon(aes(fill = esperance_de_vie))+
+  ylim(1000000, 5500000)+
+  xlim(2000000,7500000)+
+  theme_void()+
+  scale_fill_viridis_c(option = "plasma")+
+  theme(plot.background=element_rect(fill = "#012b36"))
+
+europe_carte
+```
+
+Grâce aux données géospatiales libres d'accès d'Eurostat, il est possible de créer une carte des pays de l'Union européenne. Afin de lier les données de Gapminder et celles d'Eurostat, on utilise une banque de cette dernière pour avoir accès aux codes des pays selon leur noms.
 
 ------------------------------------------------------------------------
-
-

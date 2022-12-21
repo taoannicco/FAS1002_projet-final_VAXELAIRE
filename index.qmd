@@ -2,32 +2,44 @@
 title: "FAS1002_projet-final"
 ---
 
-Vous pouvez faire le résumé de votre projet directement sur cette page et utiliser le document [intro](intro.qmd) pour décrire votre projet.
+Cette étude présente les données de diverses sources dont celles de [Gapminder](https://www.gapminder.org/data/documentation/gd004/) et de [Our World in Data](https://ourworldindata.org/). Cette étude adopte une perspective européenne.
 
-Chaque page est en fait un fichier Quarto standard. [^1]
+Il y a aussi un fort appuie sur les données de [Eurostat](https://ec.europa.eu/eurostat/).
 
-[^1]: Avec des petits trucs sympa comme des notes de bas de page. Ces documents sont les mêmes que nous avons utilisés tout au long de la session.
 
-## Vous pourrez inclure des graphiques
+Premièrement on observe les prédictions de [Gapminder](https://www.gapminder.org/data/documentation/gd004/) quant aux évolutions de l'espérance de vie des ciotyens européens qui serait en hausse jusqu'en 2100. 
 
-Comme la classique pyramide à la ci-dessous par exemple:
+Des écarts dans l'espérance de vie peuvent être perçus entre les pays de l'Union européenne. 
 
-```{r pie, fig.cap='Une très belle tarte', tidy=FALSE}
-par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c('Ciel', 'Côté ensoleillé de la pyramide', 'Côté ombragé de la pyramide'),
-  col = c('#0292D8', '#F7EA39', '#C4B632'),
-  init.angle = -50, border = NA
-)
+
+```{r, message=FALSE, warning=FALSE }
+library(ggplot2)
+library(tidyverse)
+library(rgdal)
+library(rmapshaper)
+library(sp)
+library(sf)
+library(broom)
+library(maps)
+library(rworldmap)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(gridBase)
+library(lessR)
+library(ggrepel)
+europe <- readOGR(dsn = "NUTS_RG_20M_2021_3035.shp",
+                  layer = "NUTS_RG_20M_2021_3035")
+european_table <- tidy(x = europe, region = "CNTR_CODE")
+colnames(european_table) <- c("long","lat","order","hole","piece","group","pays")
+
+europe_carte <- ggplot(data = european_table, aes(x = long, y = lat, group = group, fill = "#FAA219"))+ 
+  geom_polygon(fill= "#FAA219")+
+  ylim(1000000, 5500000)+
+  xlim(2000000,7500000)+
+  theme_void()+
+  theme(plot.background=element_rect(fill = "#012b36"))
+europe_carte
 ```
 
-<aside>Quand même très cool, non? Vous pouvez mettre des annotations sur le côté!</aside>
+<aside>pays européens</aside>
 
-### Toujours très important de mettre les bons niveaux de titres
-
-Un peu de texte de remplissage pour faire comme si la page était plus longue. *Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.*
-
-## Remerciements {.appendix}
-
-J'aimerais remercier toute la cohorte du cours FAS1002 de l'automne 2022 pour leur ouverture et efforts tout au long de la session!

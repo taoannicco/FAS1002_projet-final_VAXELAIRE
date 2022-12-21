@@ -4,7 +4,7 @@ title-block-banner: true
 description: | 
   Projet de fin de session.
 # à changer
-date: "2022-12-21"
+date: "`r Sys.Date()`"
 # Modifier les détails que vous voulez
 author:
   - name: "Nicolas Vaxelaire"
