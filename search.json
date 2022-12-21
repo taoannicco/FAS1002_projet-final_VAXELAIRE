@@ -49,11 +49,11 @@
     "text": "Remerciements\n\nJ’aimerais remercier toute la cohorte du cours FAS1002 de l’automne 2022 pour leur ouverture et efforts tout au long de la session!"
   },
   {
-    "objectID": "a-propos.html#bio",
-    "href": "a-propos.html#bio",
+    "objectID": "a-propos.html#données",
+    "href": "a-propos.html#données",
     "title": "À propos",
-    "section": "Bio",
-    "text": "Bio\nLe cours FAS1002 est une introduction à la programmation en sciences sociales avec R, un langage de programmation et un environnement statistique populaire pour analyser de données. Principalement convoité pour ses fonctionnalités statistiques avancées, R s’avère autant utilisé en recherche qu’en industrie, ce qui confère un avantage concret à son apprentissage. À ce sujet, R se prête bien à l’apprentissage de la programmation en raison de:\n\nsa nature libre et gratuite;\nsa polyvalence de fonctionnalités;\nsa popularité et sa variété de domaines d’application;\nla diversité de ressources et d’aide disponible gratuitement sur le Web;\nsa vibrante communauté reconnue pour son inclusivité et son support bienveillant."
+    "section": "Données",
+    "text": "Données\nVoici les lien pour télécharger les différentes données :“https://github.com/owid/co2-data”\n“https://github.com/owid/energy-data/”\n“http://gapm.io/ilex”\nCette étude est faite dans le cadre du cours FAS1002 est une introduction à la programmation en sciences sociales avec R, un langage de programmation et un environnement statistique populaire pour analyser de données. Principalement convoité pour ses fonctionnalités statistiques avancées, R s’avère autant utilisé en recherche qu’en industrie, ce qui confère un avantage concret à son apprentissage."
   },
   {
     "objectID": "a-propos.html#contact",
