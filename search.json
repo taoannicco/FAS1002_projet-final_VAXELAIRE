@@ -39,7 +39,7 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "Cette études des données produites par Gapminder et Our World in Data tente d’illustrer les récents changements énergétiques ainsi que les émissions de co2 produites sur le continent euroopéen. On se focalisera sur les deux dernières décennies.\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022) et (gapminder?)\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{vaxelaire,\n  author = {Nicolas Vaxelaire},\n  title = {Introduction},\n  date = {},\n  url = {https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//intro.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nNicolas Vaxelaire. n.d. “Introduction.” https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//intro.html."
+    "text": "Cette études des données produites par Gapminder et Our World in Data tente d’illustrer les récents changements énergétiques ainsi que les émissions de co2 produites sur le continent euroopéen. On se focalisera sur les deux dernières décennies.\n\nLes données proviennent entre autres de Ritchie, Roser, et Rosado (2022)\n\n\n\n\n\nLes références\n\nRitchie, Hannah, Max Roser, et Pablo Rosado. 2022. « Energy ». Our World in Data.\n\nCitationBibTeX@online{vaxelaire,\n  author = {Nicolas Vaxelaire},\n  title = {Introduction},\n  date = {},\n  url = {https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//intro.html},\n  langid = {fr}\n}\nVeuillez citer ce travail comme suit :\nNicolas Vaxelaire. n.d. “Introduction.” https://taoannicco.github.io/FAS1002_projet-final_VAXELAIRE//intro.html."
   },
   {
     "objectID": "import.html",
