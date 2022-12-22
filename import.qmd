@@ -27,14 +27,13 @@ library(tidyverse)
 library(dplyr)
 ```
 
-
 ## Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.
 
 ### Téléchargement données de Gapminder :
 
 On s'intéresse plus particulièrement à *l'espérance de vie* par pays à travers les années, la 4ème table du google sheet :
 
-Il faut tout d'abord se connecter via google pour ce type de document. Voici le code R afin d'utiliser un google sheet : 
+Il faut tout d'abord se connecter via google pour ce type de document. Voici le code R afin d'utiliser un google sheet :
 
 ```{r identification à google}
 #googlesheets4::gs4_find()
@@ -46,7 +45,8 @@ Les données de cette source seront actualisées mensuellement.
 La première étape est cruciale pour l'actualisation des données mais ne doit pas être répétée.
 :::
 
-on crée un premier mois de référence et une première année de référence **Une fois fait, il ne faut JAMAIS répéter cette action.** Un message indiquera la statut de mise à jour des données. 
+on crée un premier mois de référence et une première année de référence **Une fois fait, il ne faut JAMAIS répéter cette action.** Un message indiquera la statut de mise à jour des données.
+
 ```{r, message=FALSE, warning=FALSE}
 # étape cruciale afin d'établir une référence pour l'actualisation date du LUNDI 21 DÉCEMBRE 2022
 mois_ref <- 12
@@ -81,6 +81,7 @@ if (mois != mois_ref) {    #téléchargement pour tous les mois sauf celui de r�
 ### Energy
 
 **(sur github en format CSV)**
+
 ```{r,warning=FALSE}
 jour <- day(today)
 
@@ -100,6 +101,7 @@ if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de r�
 ### CO2 :
 
 **(sur github en format CSV)**
+
 ```{r,warning=FALSE}
 jour <- day(today)
 
@@ -116,10 +118,6 @@ if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de r�
 
 ```
 
-
-
 > Les données proviennent entre autres de @owidenergy.
 
-> les packages proviennent de : Jennifer Bryan, Hadley Wickham, Garrett Grolemund, Stefan Milton Bache, Romain François, Lionel Henry,Kirill Müller 
-
-
+> les packages proviennent de : Jennifer Bryan, Hadley Wickham, Garrett Grolemund, Stefan Milton Bache, Romain François, Lionel Henry,Kirill Müller

@@ -25,14 +25,8 @@ citation: true
 bibliography: references.bib
 ---
 
-Il est maintenant le temps de décrire votre projet avant de passer au document suivant, soit l'importation et la manipulation des données.
+Cette études des données produites par **Gapminder** et **Our World in Data** tente d'illustrer les récents changements énergétiques ainsi que les émissions de co2 produites sur  le continent euroopéen. On se focalisera sur les deux dernières décennies.
 
-Je vous conseille d'écrire cette partie en dernier, une fois que vous aurez déjà vos résultats et figures afin d'éviter de réécrire cette page plusieurs fois.
 
-::: callout-important
-N'oubliez pas d'inclure vos références sur chacune des pages!
-:::
 
-Par exemple:
-
-> Les données proviennent entre autres de @owidenergy.
+> Les données proviennent entre autres de @owidenergy et @gapminder

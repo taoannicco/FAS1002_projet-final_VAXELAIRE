@@ -58,7 +58,6 @@ colnames(data_life) <- c("country_code","country","annee","esperance_de_vie")
 
 gap_tsv <- system.file("extdata", "gapminder.tsv", package = "gapminder")
 table_continent <- read.delim(gap_tsv)
-str(table_continent)
 table_continent <- table_continent[,c( "country", "continent")]
 
 data_life <- left_join(table_continent, data_life, by = "country")
@@ -91,8 +90,7 @@ graphique1 +
 
 ```
 
-Il y aura une hausse des espérances de vie européenne selon les prédictions selon l'organisme Gapminder. Ce graphique aide à visualiser cette tendance sans pour autant tenter d'entrer dans les détails. 
-
+Il y aura une hausse des espérances de vie européenne selon les prédictions selon l'organisme Gapminder. Ce graphique aide à visualiser cette tendance sans pour autant tenter d'entrer dans les détails.
 
 ## Carte
 

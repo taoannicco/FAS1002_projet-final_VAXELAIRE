@@ -15,22 +15,24 @@ library(kableExtra)
 
 Une fois les données importées, il est possible d'ajouter certaines modifications à celles-ci : 
 
-☀︎   \(I\) Ajout d'uune variable *continent* pour les banques de **Our World in Data**
+☀︎    Ajout d'une variable *continent* pour les banques de **Our World in Data**
 
-☀︎   \(II\) Choix de la table 4 du google sheet de **Gapminder**
+☀︎    Choix de la table 4 du google sheet de **Gapminder**
 
-☀︎   \(III\) autre manipulation
+☀    Sélection des 20 dernières décennies
 
-☀︎   \(IV\)autre maniplation
+☀︎    Sélection des pays européens
 
 
-## Nettoyage de la banque data_energy :
 ```{r, message=FALSE, warning=FALSE}
 #install.packages('gapminder')
 library(gapminder)
 library(dplyr)
 data_energy <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv")
 ```
+
+## Nettoyage de la banque data_energy :
+
 Après avoir téléchargé les données actualisées, il vient de préparer les données pour leur utilisation : 
 
 ```{r,message=FALSE, warning=FALSE,results=FALSE}
@@ -47,19 +49,30 @@ data_carbone <- left_join(table_continent, data_carbon, by = "country")
 data_energie_int <- data_energie[,c( "population", "gdp","electricity_demand","energy_per_gdp")]
 
 data_carbone_int <- data_carbone[,c( "population","co2_growth_prct")]
-```
-
-```{r}
 print("les données sont prêtes à l'étude")
 ```
 
-
+###Divers chiffres sur la banque Energy :
 ```{r}
 kable(summary(data_energie_int))
 ```
 
+###Divers chiffres sur la banque CO2 :
 ```{r}
 kable(summary(data_carbone_int))
+```
+
+###Sélection type pour les pays européens
+```{r}
+data_carbone <- left_join(table_continent, data_carbon, by = "country")
+data_carbone <- data_carbone |> 
+    filter(continent == "Europe")
+```
+
+###Sélection type pour les 20 dernières années 
+```{r}
+data_energie <- data_energie |> 
+    filter(year >= 2000)
 ```
 
 
