@@ -28,13 +28,12 @@ website:
         text: Page d'accueil
       - intro.qmd
       - import.qmd
-      - anallyses.qmd
       - exploration.qmd
     right:
       - href: a-propos.qmd
         text: Détails
-      - href: exporter.qmd
-        text: Data
+      - href: analyses.qmd
+        text: Analyses
       - href: manipulation.qmd
         text: Construction des données
 # footer
