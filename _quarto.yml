@@ -28,6 +28,7 @@ website:
         text: Page d'accueil
       - intro.qmd
       - import.qmd
+      - anallyses.qmd
       - exploration.qmd
     right:
       - href: a-propos.qmd
