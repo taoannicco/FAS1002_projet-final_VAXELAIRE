@@ -10,7 +10,7 @@ Il y a aussi un fort appuie sur les données de [Eurostat](https://ec.europa.eu/
 Premièrement on observe les prédictions de [Gapminder](https://www.gapminder.org/data/documentation/gd004/) quant aux évolutions de l'espérance de vie des ciotyens européens qui serait en hausse jusqu'en 2100. Cependant, des écarts dans l'espérance de vie peuvent être perçus entre les pays de l'Union européenne. L'Union europééenne n'est pas unilatérales dans ses perspectives d'espérance de vie et ne propose pas à tout ces citoyens les mêmes qualités de vie.
 
 
-```{r, message=FALSE, warning=FALSE }
+```{r, message=FALSE, warning=FALSE  }
 library(ggplot2)
 library(tidyverse)
 library(rgdal)

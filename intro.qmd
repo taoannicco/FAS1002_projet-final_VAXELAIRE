@@ -25,8 +25,6 @@ citation: true
 bibliography: references.bib
 ---
 
-Cette études des données produites par **Gapminder** et **Our World in Data** tente d'illustrer les récents changements énergétiques ainsi que les émissions de co2 produites sur  le continent euroopéen. On se focalisera sur les deux dernières décennies.
+Cette études des données produites par **Gapminder** et **Our World in Data** tente d'illustrer les récents changements énergétiques ainsi que les émissions de co2 produites sur le continent euroopéen. On se focalisera sur les deux dernières décennies.
 
-
-
-> Les données proviennent entre autres de @owidenergy et @gapminder
+> Les données proviennent entre autres de @owidenergy
