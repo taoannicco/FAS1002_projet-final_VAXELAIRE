@@ -232,12 +232,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Une fois les données importées, il est possible d’ajouter certaines modifications à celles-ci :</p>
-<p>☀︎ (I) Ajout d’uune variable <em>continent</em> pour les banques de <strong>Our World in Data</strong></p>
-<p>☀︎ (II) Choix de la table 4 du google sheet de <strong>Gapminder</strong></p>
-<p>☀︎ (III) autre manipulation</p>
-<p>☀︎ (IV)autre maniplation</p>
-<section id="nettoyage-de-la-banque-data_energy" class="level2">
-<h2 class="anchored" data-anchor-id="nettoyage-de-la-banque-data_energy">Nettoyage de la banque data_energy :</h2>
+<p>☀︎ Ajout d’une variable <em>continent</em> pour les banques de <strong>Our World in Data</strong></p>
+<p>☀︎ Choix de la table 4 du google sheet de <strong>Gapminder</strong></p>
+<p>☀ Sélection des 20 dernières décennies</p>
+<p>☀︎ Sélection des pays européens</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -247,6 +245,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<section id="nettoyage-de-la-banque-data_energy" class="level2">
+<h2 class="anchored" data-anchor-id="nettoyage-de-la-banque-data_energy">Nettoyage de la banque data_energy :</h2>
 <p>Après avoir téléchargé les données actualisées, il vient de préparer les données pour leur utilisation :</p>
 <div class="cell">
 <details>
@@ -263,22 +263,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>data_energie_int <span class="ot">&lt;-</span> data_energie[,<span class="fu">c</span>( <span class="st">"population"</span>, <span class="st">"gdp"</span>,<span class="st">"electricity_demand"</span>,<span class="st">"energy_per_gdp"</span>)]</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data_carbone_int <span class="ot">&lt;-</span> data_carbone[,<span class="fu">c</span>( <span class="st">"population"</span>,<span class="st">"co2_growth_prct"</span>)]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data_carbone_int <span class="ot">&lt;-</span> data_carbone[,<span class="fu">c</span>( <span class="st">"population"</span>,<span class="st">"co2_growth_prct"</span>)]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"les données sont prêtes à l'étude"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<p>###Divers chiffres sur la banque Energy :</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"les données sont prêtes à l'étude"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "les données sont prêtes à l'étude"</code></pre>
-</div>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(data_energie_int))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(data_energie_int))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -347,10 +340,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
+<p>###Divers chiffres sur la banque CO2 :</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(data_carbone_int))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(data_carbone_int))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -402,6 +396,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 </div>
+</div>
+<p>###Sélection type pour les pays européens</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data_carbone <span class="ot">&lt;-</span> <span class="fu">left_join</span>(table_continent, data_carbon, <span class="at">by =</span> <span class="st">"country"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data_carbone <span class="ot">&lt;-</span> data_carbone <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Europe"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>###Sélection type pour les 20 dernières années</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data_energie <span class="ot">&lt;-</span> data_energie <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2000</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 
