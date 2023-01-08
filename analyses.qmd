@@ -17,6 +17,7 @@ citation: true
 # ce fichier ou de connecter RStudio directement pour pouvoir citer avec @nom-de-reference.
 bibliography: references.bib
 ---
+
 ```{r, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(tidyverse)
@@ -34,20 +35,20 @@ library(lessR)
 library(ggrepel)
 ```
 
-# Objectifs : 
-Les banques de données nous permettent de faire des estimations pourdonner  un portait de l'Europe en terme de demande d'électrcit et des émissions de carbones qu'elle émet.
+# Objectifs :
 
+Les banques de données nous permettent de faire des estimations pourdonner un portait de l'Europe en terme de demande d'électrcit et des émissions de carbones qu'elle émet.
 
-## Banque Energy :
+## Banque 'Energy' :
 
-
-À travers 2 variables de la banques de données sur les énergies il est possible d'illustrer historiquement les émissions de carbones du fait de l'augmentation de la demande d'électricité. 
+À travers 2 variables de la banques de données sur les énergies il est possible d'illustrer historiquement les émissions de carbones du fait de l'augmentation de la demande d'électricité.
 
 La variable **carbon_intensity_elec** présente les émissions de carbone dues à la production d'électricité et la variable **electricty_demand** illustre la demande de cette électricité
 
 ### Demande européenne:
 
 Il y a une augmentation de la demande de l'électricité et de ce fait une augmentation de ses coûts environnementaux.
+
 ```{r, message=FALSE, warning=FALSE}
 gap_tsv <- system.file("extdata", "gapminder.tsv", package = "gapminder")
 table_continent <- read.delim(gap_tsv)
@@ -95,9 +96,11 @@ graph2 <- ggplot(data = demande_europe, mapping = aes(x=Annees, y = Demande_tota
 graph2
 
 ```
-On remarque une réelle augmentation de la consommation de l'électricité au début des années 2000 avec moins de 3200 tetrawatt-heures de demande en 2000 et environ 3700 tetrawatt-heures en 2008. La demande, influencée par son pouvoir d'achat, a diminué brutalement entre 2008 et 2010, baisse pouvant s'expliquer par la crise économique de 2008. Enfin on remarque qu'à partir de 2019 la demande diminue aussi, chute qui s'explique par une baisse de la production européenne avec les diverses mesures liées au covid-19. 
+
+On remarque une réelle augmentation de la consommation de l'électricité au début des années 2000 avec moins de 3200 tetrawatt-heures de demande en 2000 et environ 3700 tetrawatt-heures en 2008. La demande, influencée par son pouvoir d'achat, a diminué brutalement entre 2008 et 2010, baisse pouvant s'expliquer par la crise économique de 2008. Enfin on remarque qu'à partir de 2019 la demande diminue aussi, chute qui s'explique par une baisse de la production européenne avec les diverses mesures liées au covid-19.
 
 ### Empreinte carbone:
+
 ```{r, message=FALSE, warning=FALSE}
 intensity_elec <- data_energie |> 
     group_by(year) |> 
@@ -132,11 +135,13 @@ graph3 <- ggplot(data = intensity_elec , mapping = aes(x=Années, y = Émission_
     
 graph3
 ```
-L'empreinte carbone des européens liée à leur consommation et production d'électricité ne cesse de diminuer. Alors que tous les pays émettaient environ 15 tonnes de CO2 par Kilowatt-heures au début des années 2000, on arrive à moins dde 7000 en 2020. La production et la consommation d'électricité en Europe sont beaucoup plus légères en terme d'émission de CO2 à travers les deux décennies. 	
 
+L'empreinte carbone des européens liée à leur consommation et production d'électricité ne cesse de diminuer. Alors que tous les pays émettaient environ 15 tonnes de CO2 par Kilowatt-heures au début des années 2000, on arrive à moins de 7000 en 2020. La production et la consommation d'électricité en Europe sont beaucoup plus légères en terme d'émission de CO2 à travers les deux décennies.
 
-## Banque CO2
+## Banque 'CO2' :
+
 Avec une augmentation de la population comme le souligne les données de Gapminder, la consommation par habitant et la production de GES sont des enjeux à souliger.
+
 ```{r, message=FALSE, warning=FALSE}
 data_carbon <- read.csv("https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv")
 data_carbone <- left_join(table_continent, data_carbon, by = "country")
@@ -182,7 +187,5 @@ graph4 <- ggplot(data = emissionn_percapita , mapping = aes(x=Années, y = Émis
     
 graph4
 ```
-La production annuelle de CO2 par habitant semble se stabiliser à la fin des années 2020 sous 5 tonnes. En croisant ces données avec celle de Gapminder, on peut tente de trouver les émissions européennes en 2050 selon les prédictions de population. Il y a une réelle dimintion des émissions par individu en moyenne en Europe
 
-
-
+La production annuelle de CO2 par habitant semble se stabiliser à la fin des années 2020 sous 5 tonnes. En croisant ces données avec celle de Gapminder, on peut tenter de trouver les émissions européennes en 2050 selon les prédictions de population. Il y a une réelle diminution des émissions par individu en moyenne en Europe

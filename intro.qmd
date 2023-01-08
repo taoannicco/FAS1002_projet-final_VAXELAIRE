@@ -2,7 +2,7 @@
 title: "Introduction"
 title-block-banner: true
 description: | 
-  Projet de fin de session.
+  Projet de fin de session
 # à changer
 date: "`r Sys.Date()`"
 # Modifier les détails que vous voulez
@@ -25,6 +25,6 @@ citation: true
 bibliography: references.bib
 ---
 
-Cette études des données produites par **Gapminder** et **Our World in Data** tente d'illustrer les récents changements énergétiques ainsi que les émissions de co2 produites sur le continent euroopéen. On se focalisera sur les deux dernières décennies.
+Cette étude des données produites par **Gapminder** et **Our World in Data** illustre les récents changements énergétiques ainsi que les émissions de co2 produites sur le continent euroopéen, en se focalisant sur les deux dernières décennies.
 
 > Les données proviennent entre autres de @owidenergy

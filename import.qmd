@@ -29,11 +29,9 @@ library(dplyr)
 
 ## Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.
 
-### Téléchargement données de Gapminder :
+### Téléchargement des données de Gapminder :
 
-On s'intéresse plus particulièrement à *l'espérance de vie* par pays à travers les années, la 4ème table du google sheet :
-
-Il faut tout d'abord se connecter via google pour ce type de document. Voici le code R afin d'utiliser un google sheet :
+On s'intéresse plus particulièrement à *l'espérance de vie* par pays à travers les années, la 4ème table du google sheet. Il faut tout d'abord se connecter via google pour ce type de document. Voici le code R afin d'utiliser un google sheet :
 
 ```{r identification à google}
 #googlesheets4::gs4_find()
@@ -76,11 +74,9 @@ if (mois != mois_ref) {    #téléchargement pour tous les mois sauf celui de r�
 }
 ```
 
-## Téléchargement données de Our world in data (mise à jour quotidienne)
+## Téléchargement des données de Our world in data (mise à jour quotidienne)
 
-### Energy
-
-**(sur github en format CSV)**
+### Banque 'Energy' **(sur github en format CSV) :**
 
 ```{r,warning=FALSE}
 jour <- day(today)
@@ -98,9 +94,7 @@ if (jour != jour_ref) {    #téléchargement pour tous les mois sauf celui de r�
 
 ```
 
-### CO2 :
-
-**(sur github en format CSV)**
+### Banque 'CO2' **(sur github en format CSV):**
 
 ```{r,warning=FALSE}
 jour <- day(today)
