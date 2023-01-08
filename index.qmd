@@ -34,7 +34,7 @@ colnames(european_table) <- c("long","lat","order","hole","piece","group","pays"
 L'Union européenne n'est pas unilatérale dans ses perspectives d'espérance de vie et ne propose pas à tout ces citoyens les mêmes qualités de vie.
 
 ```{r, message=FALSE, warning=FALSE  }
-europe_carte <- ggplot(data = european_table, aes(x = long, y = lat, group = group, fill = "#FAA219"))+}
+europe_carte <- ggplot(data = european_table, aes(x = long, y = lat, group = group, fill = "#FAA219"))+
   geom_polygon(fill= "#FAA219")+
   ylim(1000000, 5500000)+
   xlim(2000000,7500000)+
