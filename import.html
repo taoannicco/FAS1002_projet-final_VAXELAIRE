@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -245,7 +245,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">21 décembre 2022</p>
+        <p class="date">8 janvier 2023</p>
       </div>
     </div>
     
@@ -263,12 +263,12 @@ div.csl-indent {
   <ul>
   <li><a href="#ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser." id="toc-ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser." class="nav-link active" data-scroll-target="#ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser.">Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.</a>
   <ul class="collapse">
-  <li><a href="#téléchargement-données-de-gapminder" id="toc-téléchargement-données-de-gapminder" class="nav-link" data-scroll-target="#téléchargement-données-de-gapminder">Téléchargement données de Gapminder :</a></li>
+  <li><a href="#téléchargement-des-données-de-gapminder" id="toc-téléchargement-des-données-de-gapminder" class="nav-link" data-scroll-target="#téléchargement-des-données-de-gapminder">Téléchargement des données de Gapminder :</a></li>
   </ul></li>
-  <li><a href="#téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne" id="toc-téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne" class="nav-link" data-scroll-target="#téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne">Téléchargement données de Our world in data (mise à jour quotidienne)</a>
+  <li><a href="#téléchargement-des-données-de-our-world-in-data-mise-à-jour-quotidienne" id="toc-téléchargement-des-données-de-our-world-in-data-mise-à-jour-quotidienne" class="nav-link" data-scroll-target="#téléchargement-des-données-de-our-world-in-data-mise-à-jour-quotidienne">Téléchargement des données de Our world in data (mise à jour quotidienne)</a>
   <ul class="collapse">
-  <li><a href="#energy" id="toc-energy" class="nav-link" data-scroll-target="#energy">Energy</a></li>
-  <li><a href="#co2" id="toc-co2" class="nav-link" data-scroll-target="#co2">CO2 :</a></li>
+  <li><a href="#banque-energy-sur-github-en-format-csv" id="toc-banque-energy-sur-github-en-format-csv" class="nav-link" data-scroll-target="#banque-energy-sur-github-en-format-csv">Banque ‘Energy’ <strong>(sur github en format CSV) :</strong></a></li>
+  <li><a href="#banque-co2-sur-github-en-format-csv" id="toc-banque-co2-sur-github-en-format-csv" class="nav-link" data-scroll-target="#banque-co2-sur-github-en-format-csv">Banque ‘CO2’ <strong>(sur github en format CSV):</strong></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/edit/main/import.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/issues/new" class="toc-action">Faire part d'un problème</a></p><p><a href="https://github.com/taoannicco/FAS1002_projet-final_VAXELAIRE/blob/main/import.qmd" class="toc-action">Voir la source</a></p></div></div></nav>
@@ -292,10 +292,9 @@ div.csl-indent {
 </div>
 <section id="ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser." class="level2">
 <h2 class="anchored" data-anchor-id="ce-fichier-permet-de-télécharger-les-données-brutes-mais-aussi-de-les-actualiser.">Ce fichier permet de télécharger les données brutes mais aussi de les actualiser.</h2>
-<section id="téléchargement-données-de-gapminder" class="level3">
-<h3 class="anchored" data-anchor-id="téléchargement-données-de-gapminder">Téléchargement données de Gapminder :</h3>
-<p>On s’intéresse plus particulièrement à <em>l’espérance de vie</em> par pays à travers les années, la 4ème table du google sheet :</p>
-<p>Il faut tout d’abord se connecter via google pour ce type de document. Voici le code R afin d’utiliser un google sheet :</p>
+<section id="téléchargement-des-données-de-gapminder" class="level3">
+<h3 class="anchored" data-anchor-id="téléchargement-des-données-de-gapminder">Téléchargement des données de Gapminder :</h3>
+<p>On s’intéresse plus particulièrement à <em>l’espérance de vie</em> par pays à travers les années, la 4ème table du google sheet. Il faut tout d’abord se connecter via google pour ce type de document. Voici le code R afin d’utiliser un google sheet :</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -351,59 +350,80 @@ Important
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stderr">
+<pre><code>! Using an auto-discovered, cached token.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>  To suppress this message, modify your code or options to clearly consent to
+  the use of a cached token.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>  See gargle's "Non-interactive auth" vignette for more details:</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>  &lt;https://gargle.r-lib.org/articles/non-interactive-auth.html&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ The googlesheets4 package is using a cached token for
+  'vaxelairenico@gmail.com'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Reading from "_GM-Life Expectancy- Dataset - v12".</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Range ''data-for-countries-etc-by-year''.</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Les données sont déjà à jour"</code></pre>
+<pre><code>[1] "Les données sont à jour"</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne" class="level2">
-<h2 class="anchored" data-anchor-id="téléchargement-données-de-our-world-in-data-mise-à-jour-quotidienne">Téléchargement données de Our world in data (mise à jour quotidienne)</h2>
-<section id="energy" class="level3">
-<h3 class="anchored" data-anchor-id="energy">Energy</h3>
-<p><strong>(sur github en format CSV)</strong></p>
+<section id="téléchargement-des-données-de-our-world-in-data-mise-à-jour-quotidienne" class="level2">
+<h2 class="anchored" data-anchor-id="téléchargement-des-données-de-our-world-in-data-mise-à-jour-quotidienne">Téléchargement des données de Our world in data (mise à jour quotidienne)</h2>
+<section id="banque-energy-sur-github-en-format-csv" class="level3">
+<h3 class="anchored" data-anchor-id="banque-energy-sur-github-en-format-csv">Banque ‘Energy’ <strong>(sur github en format CSV) :</strong></h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>jour <span class="ot">&lt;-</span> <span class="fu">day</span>(today)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (jour <span class="sc">!=</span> jour_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    jour_ref <span class="ot">&lt;-</span> jour <span class="co"># le mois de rééférence devient le mois actuel</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour."</span>) </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois de décembre</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>jour <span class="ot">&lt;-</span> <span class="fu">day</span>(today)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (jour <span class="sc">!=</span> jour_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    jour_ref <span class="ot">&lt;-</span> jour <span class="co"># le mois de rééférence devient le mois actuel</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour."</span>) </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois de décembre</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    data_energy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/energy/owid-energy-data.csv"</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Les données sont déjà à jour"</code></pre>
+<pre><code>[1] "Les données sont à jour."</code></pre>
 </div>
 </div>
 </section>
-<section id="co2" class="level3">
-<h3 class="anchored" data-anchor-id="co2">CO2 :</h3>
-<p><strong>(sur github en format CSV)</strong></p>
+<section id="banque-co2-sur-github-en-format-csv" class="level3">
+<h3 class="anchored" data-anchor-id="banque-co2-sur-github-en-format-csv">Banque ‘CO2’ <strong>(sur github en format CSV):</strong></h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>jour <span class="ot">&lt;-</span> <span class="fu">day</span>(today)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (jour <span class="sc">!=</span> jour_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    jour_ref <span class="ot">&lt;-</span> jour <span class="co"># le mois de rééférence devient le mois actuel</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour."</span>) </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois de décembre</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>jour <span class="ot">&lt;-</span> <span class="fu">day</span>(today)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (jour <span class="sc">!=</span> jour_ref) {    <span class="co">#téléchargement pour tous les mois sauf celui de référénce</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    jour_ref <span class="ot">&lt;-</span> jour <span class="co"># le mois de rééférence devient le mois actuel</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour."</span>) </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (an <span class="sc">!=</span> an_ref) { <span class="co">#téléchargement pour les prochains mois de décembre</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    data_carbon <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://nyc3.digitaloceanspaces.com/owid-public/data/co2/owid-co2-data.csv"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont à jour"</span>) </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Les données sont déjà à jour"</span>) </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Les données sont déjà à jour"</code></pre>
+<pre><code>[1] "Les données sont à jour"</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">

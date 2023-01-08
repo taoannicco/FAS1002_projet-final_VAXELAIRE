@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>Cette étude présente les données de diverses sources dont celles de <a href="https://www.gapminder.org/data/documentation/gd004/">Gapminder</a> et de <a href="https://ourworldindata.org/">Our World in Data</a> et adopte une perspective européenne.</p>
 <p>Il y a aussi un fort appuie sur les données de <a href="https://ec.europa.eu/eurostat/">Eurostat</a> qui permettent entre autre de créer des cartes européennes, des tables et d’avoir les coordonnées des pays européens.</p>
-<p>Premièrement on observe les prédictions de <a href="https://www.gapminder.org/data/documentation/gd004/">Gapminder</a> quant aux évolutions de l’espérance de vie des ciotyens européens qui serait en hausse jusqu’en 2100. Cependant, des écarts dans l’espérance de vie peuvent être perçus entre les pays de l’Union européenne. L’Union europééenne n’est pas unilatérales dans ses perspectives d’espérance de vie et ne propose pas à tout ces citoyens les mêmes qualités de vie.</p>
+<p>Premièrement on observe les prédictions de <a href="https://www.gapminder.org/data/documentation/gd004/">Gapminder</a> quant aux évolutions de l’espérance de vie des citoyens européens qui serait en hausse jusqu’en 2100. Cependant, des écarts dans l’espérance de vie peuvent être perçus entre les pays de l’Union européenne.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -241,31 +241,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>OGR data source with driver: ESRI Shapefile 
-Source: "/Users/nicolasvaxelaire/FAS1002_projet-final/NUTS_RG_20M_2021_3035.shp", layer: "NUTS_RG_20M_2021_3035"
+Source: "/Users/nicolasvaxelaire/Documents/COURS/PROGRA/FAS 1002/FAS1002_projet-final/NUTS_RG_20M_2021_3035.shp", layer: "NUTS_RG_20M_2021_3035"
 with 2010 features
 It has 9 fields</code></pre>
 </div>
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>european_table <span class="ot">&lt;-</span> <span class="fu">tidy</span>(<span class="at">x =</span> europe, <span class="at">region =</span> <span class="st">"CNTR_CODE"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(european_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"long"</span>,<span class="st">"lat"</span>,<span class="st">"order"</span>,<span class="st">"hole"</span>,<span class="st">"piece"</span>,<span class="st">"group"</span>,<span class="st">"pays"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>europe_carte <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> european_table, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> <span class="st">"#FAA219"</span>))<span class="sc">+</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span> <span class="st">"#FAA219"</span>)<span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">1000000</span>, <span class="dv">5500000</span>)<span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">2000000</span>,<span class="dv">7500000</span>)<span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()<span class="sc">+</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#012b36"</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>europe_carte</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(european_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"long"</span>,<span class="st">"lat"</span>,<span class="st">"order"</span>,<span class="st">"hole"</span>,<span class="st">"piece"</span>,<span class="st">"group"</span>,<span class="st">"pays"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>L’Union européenne n’est pas unilatérale dans ses perspectives d’espérance de vie et ne propose pas à tout ces citoyens les mêmes qualités de vie.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>europe_carte <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> european_table, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> <span class="st">"#FAA219"</span>))<span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill=</span> <span class="st">"#FAA219"</span>)<span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">1000000</span>, <span class="dv">5500000</span>)<span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">2000000</span>,<span class="dv">7500000</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()<span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.background=</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#012b36"</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>europe_carte</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <aside>
 pays européens
 </aside>
-<p>Les données de <a href="https://ourworldindata.org/">Our World in Data</a> nous démontrent tout de même une amélioration des empreintes carbones liées à la consommation et prouction énergétiques européennes depuis les années 2000.</p>
+<p>Les données de <a href="https://ourworldindata.org/">Our World in Data</a> nous démontrent tout de même une amélioration des empreintes carbones liées à la consommation et la production énergétique européenne depuis les années 2000.</p>
 
 
 
